@@ -10,10 +10,12 @@ CREATE TABLE stadiums(
 CREATE TABLE teams (
     team_id INT NOT NULL AUTO_INCREMENT,
     team_name VARCHAR(100) NOT NULL,
-    stadium_id INT FOREIGN KEY REFERENCES stadiums(stadium_id),
+    stadium_id INT,
     city VARCHAR(100),
     founded_year YEAR,
-    PRIMARY KEY (team_id)
+    PRIMARY KEY (team_id),
+    FOREIGN KEY (stadium_id) REFERENCES stadiums(stadium_id),
+    FOREIGN KEY (stadium_id) REFERENCES stadiums(stadium_id);
 );
 
 CREATE TABLE  managers (
@@ -71,4 +73,6 @@ CREATE TABLE match_events(
     PRIMARY KEY (event_id),
     FOREIGN KEY (match_id) REFERENCES matches(match_id),
     FOREIGN KEY (player_id) REFERENCES players(player_id)
-)
+);
+
+DROP table teams;
