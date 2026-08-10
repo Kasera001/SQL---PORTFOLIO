@@ -430,4 +430,14 @@ INSERT INTO matches (season_id, home_team_id, away_team_id, home_goals, away_goa
 (1, 38, 12, 10, '2024-05-19', 2, 4, 12),
 (1, 38, 13, 19, '2024-05-19', 3, 1, 13),
 (1, 38, 17, 18, '2024-05-19', 0, 3, 17);
- 
+ INSERT INTO players (full_name, team_id, position, nationality) VALUES
+('Erling Haaland', 13, 'FWD', 'Norway'),         -- Man City, 27 goals (Golden Boot)
+('Cole Palmer', 7, 'FWD', 'England'),             -- Chelsea, 22 goals
+('Alexander Isak', 15, 'FWD', 'Sweden'),          -- Newcastle, 21 goals
+('Phil Foden', 13, 'MID', 'England'),             -- Man City, 19 goals
+('Dominic Solanke', 3, 'FWD', 'England'),         -- Bournemouth, 19 goals
+('Ollie Watkins', 2, 'FWD', 'England'),           -- Aston Villa, 19 goals
+('Mohamed Salah', 11, 'FWD', 'Egypt'),            -- Liverpool, 18 goals
+('Son Heung-min', 18, 'FWD', 'South Korea'),      -- Tottenham, 17 goals
+('Jarrod Bowen', 19, 'FWD', 'England'),           -- West Ham, 16 goals
+('Jean-Philippe Mateta', 8, 'FWD', 'France');     -- Crystal Palace, 16 goals
