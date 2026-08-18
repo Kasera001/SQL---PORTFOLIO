@@ -101,11 +101,11 @@ INSERT INTO matches (
 )
 SELECT
     1 AS season_id,
-    CEIL(ROW_NUMBER() OVER (ORDER BY STR_TO_DATE(s.`Date`, '%d/%m/%Y'), s.`HomeTeam`) / 10) AS matchweek,
+    CEIL(ROW_NUMBER() OVER (ORDER BY STR_TO_DATE(s.`Date`, '%Y-%m-%d'), s.`HomeTeam`) / 10) AS matchweek,
     ht.team_id AS home_team_id,
     at.team_id AS away_team_id,
     ht.stadium_id,
-    STR_TO_DATE(s.`Date`, '%d/%m/%Y') AS match_date,
+    STR_TO_DATE(s.`Date`, '%Y-%m-%d') AS match_date,
     s.`FTHG` AS home_goals,
     s.`FTAG` AS away_goals
 FROM stg_premier_league s
