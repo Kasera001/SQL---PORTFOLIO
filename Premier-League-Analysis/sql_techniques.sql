@@ -7,10 +7,10 @@ INNER JOIN teams t ON t.team_id = m.home_team_id
 INNER JOIN stadiums s ON s.stadium_id = m.stadium_id;
 
 -- 2) Aggregate with GROUP BY: total home goals by team
-SELECT t.team_name, SUM(m.home_goals) AS total_home_goals
+SELECT t.team_id, t.team_name, SUM(m.home_goals) AS total_home_goals
 FROM matches m
 INNER JOIN teams t ON t.team_id = m.home_team_id
-GROUP BY t.team_name
+GROUP BY t.team_id, t.team_name
 ORDER BY total_home_goals DESC;
 
 -- 3) CASE expression: classify match outcome for home team
