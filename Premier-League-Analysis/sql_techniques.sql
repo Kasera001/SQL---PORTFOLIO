@@ -54,6 +54,7 @@ SELECT
     SUM(m.home_goals) OVER (
         PARTITION BY m.home_team_id
         ORDER BY m.match_date, m.match_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
     ) AS running_home_goals
 FROM matches m
 INNER JOIN teams t ON t.team_id = m.home_team_id
