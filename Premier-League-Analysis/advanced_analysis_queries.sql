@@ -89,6 +89,7 @@ WITH team_matches AS (
         CASE WHEN m.home_goals > m.away_goals THEN 3 WHEN m.home_goals = m.away_goals THEN 1 ELSE 0 END AS points,
         (m.home_goals - m.away_goals) AS goal_diff
     FROM matches m
+    WHERE m.home_goals IS NOT NULL AND m.away_goals IS NOT NULL
     UNION ALL
     SELECT
         m.match_id,
