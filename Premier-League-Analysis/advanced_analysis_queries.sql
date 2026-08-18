@@ -18,6 +18,7 @@ WITH all_results AS (
         CASE WHEN m.home_goals = m.away_goals THEN 1 ELSE 0 END AS draws,
         CASE WHEN m.home_goals < m.away_goals THEN 1 ELSE 0 END AS losses
     FROM matches m
+    WHERE m.home_goals IS NOT NULL AND m.away_goals IS NOT NULL
     UNION ALL
     SELECT
         m.season_id,
