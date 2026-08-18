@@ -59,6 +59,7 @@ WITH home_points AS (
         home_team_id AS team_id,
         SUM(CASE WHEN home_goals > away_goals THEN 3 WHEN home_goals = away_goals THEN 1 ELSE 0 END) AS points_home
     FROM matches
+    WHERE home_goals IS NOT NULL AND away_goals IS NOT NULL
     GROUP BY home_team_id
 ),
 away_points AS (
