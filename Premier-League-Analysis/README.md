@@ -19,3 +19,7 @@ This project builds a Premier League analytics database and includes advanced SQ
 - https://datahub.io/football/english-premier-league/_r/-/season-2324.csv
 
 Update `@csv_file` in the seed script to your local CSV path before running the loader section.
+
+### MySQL `LOAD DATA LOCAL INFILE` prerequisites
+- Ensure the server allows local infile (`local_infile=1`).
+- Use a client invocation that enables it (example: `mysql --local-infile=1`).
