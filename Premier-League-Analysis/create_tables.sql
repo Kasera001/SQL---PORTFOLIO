@@ -76,7 +76,7 @@ CREATE TABLE matches (
     home_goals TINYINT UNSIGNED,
     away_goals TINYINT UNSIGNED,
     PRIMARY KEY (match_id),
-    UNIQUE KEY uk_season_fixture (season_id, matchweek, home_team_id, away_team_id),
+    UNIQUE KEY uk_season_fixture (season_id, home_team_id, away_team_id),
     CONSTRAINT fk_matches_season
         FOREIGN KEY (season_id) REFERENCES seasons(season_id),
     CONSTRAINT fk_matches_home_team
