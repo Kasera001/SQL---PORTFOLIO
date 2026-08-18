@@ -111,7 +111,7 @@ SELECT
 FROM stg_premier_league s
 JOIN teams ht ON ht.team_name = s.`HomeTeam`
 JOIN teams at ON at.team_name = s.`AwayTeam`
-ORDER BY STR_TO_DATE(s.`Date`, '%d/%m/%Y'), s.`HomeTeam`;
+ORDER BY STR_TO_DATE(s.`Date`, '%Y-%m-%d'), s.`HomeTeam`;
 
 -- Optional sanity check: should return 380 rows for one full season.
 SELECT COUNT(*) AS loaded_matches FROM matches WHERE season_id = 1;
